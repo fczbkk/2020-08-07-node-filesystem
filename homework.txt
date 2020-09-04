@@ -1,42 +1,8 @@
-- Vytvorte logger, ktorý bude pripájať obsah k nejakému súboru.
-- Extra body dostanete za limit obsahu súboru na 10 riadkov.
+Upravte log-queue.js tak, aby:
 
-JS:
-
-myLogger('aaa')
-myLogger('bbb')
-
-my-log.txt:
-
-aaa
-bbb
+- zapisoval až keď sa v queue nahromadí viac než 10 položiek
+- najčastejšie raz za 5 sekúnd
 
 
 
-JS:
-
-myLogger('aaa')
-myLogger('bbb')
-myLogger('ccc')
-myLogger('ddd')
-myLogger('eee')
-myLogger('fff')
-myLogger('ggg')
-myLogger('hhh')
-myLogger('iii')
-myLogger('jjj')
-myLogger('kkk')
-myLogger('lll')
-
-my-log.txt:
-
-ccc
-ddd
-eee
-fff
-ggg
-hhh
-iii
-jjj
-kkk
-lll
+Riki vám dodá funkicu, ktorá v náhodných intervaloch bude volať logovanie.
