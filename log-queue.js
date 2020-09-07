@@ -28,6 +28,7 @@ async function writeToLog () {
   }
 }
 
+/*
 myLogger('aaa')
 myLogger('bbb')
 myLogger('ccc')
@@ -40,4 +41,23 @@ myLogger('iii')
 myLogger('jjj')
 myLogger('kkk')
 myLogger('lll')
+*/
 
+function startRandomCalls (fn, {delay = 100, probability = 0.1} = {}) {
+  let id = 0
+  setInterval(function () {
+    const random = Math.random()
+    if (random < probability) {
+      fn({
+        message: 'random call',
+        id: ++id,
+        timestamp: Date.now()
+      })
+    }
+  }, delay)
+}
+
+startRandomCalls(({message, id, timestamp}) => {
+  console.log('made random call', id, timestamp)
+  writeToLog(message)
+})
