@@ -59,5 +59,5 @@ function startRandomCalls (fn, {delay = 100, probability = 0.1} = {}) {
 
 startRandomCalls(({message, id, timestamp}) => {
   console.log('made random call', id, timestamp)
-  writeToLog(message)
+  writeToLog(`${message}, ${id}, ${timestamp}`)
 })
